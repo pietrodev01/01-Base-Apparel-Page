@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+/********** Fonts **********/
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 64px;
+  letter-spacing: 10px;
+}
+
+h1.pink {
+  color: hsl(0, 36%, 70%);
+  font-weight: 200;
+  letter-spacing: 10px;
+}
+
+h1.lighter-weight {
+  font-weight: 500;
+}
+
+p {
+  color: hsl(0, 36%, 70%);
+  line-height: 180%;
+}
+
+/********** Apparel Page Mobile First **********/
+
+body {
+  margin: 0;
+}
+
+.root-container {
+  /* border: 2px solid yellow; */
+  max-width: 1600px;
+}
+
+header {
+  padding: 32px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+}
+
+.hero-img-container {
+  background-image: url(images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 250px;
+  order: 1;
+}
+
+.text-container {
+  text-align: center;
+  order: 2;
+  padding: 16px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+input {
+  border-radius: 24px;
+  border: 1px solid hsl(0, 74%, 74%);
+  padding: 16px;
+  width: 100%;
+  position: relative;
+  left: 50px;
+  flex-shrink: 0;
+}
+
+input[placeholder] {
+  color: hsl(0, 74%, 74%);
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  padding: 16px 40px;
+  border-radius: 24px;
+  position: relative;
+  right: 40px;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.error {
+  background-color: hsl(0, 93%, 68%);
+  padding: 2px;
+  position: absolute;
+  border-radius: 50%;
+  top: 10px;
+  right: 100px;
+  visibility: hidden;
+}
+
+.error-text {
+  margin-left: 16px;
+  margin-top: 8px;
+  color: hsl(0, 93%, 68%);
+  visibility: hidden;
+}
+
+/********** Media Query 500px **********/
+
+@media (min-width: 830px) {
+  header {
+    position: absolute;
+    left: 11vw;
+    top: 24px;
+    height: fit-content;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: right;
+    gap: 0;
+  }
+
+  .hero-img-container {
+    background-image: url(images/hero-desktop.jpg);
+    background-size: cover;
+    order: 2;
+    min-height: 800px;
+    max-width: 610px;
+
+    /* border: 2px solid red; */
+    flex-shrink: 0.5;
+    /* flex-basis: calc(40% - 56px); */
+  }
+
+  .text-container {
+    order: 1;
+    align-self: center;
+    text-align: left;
+    padding: 64px;
+    max-width: 600px;
+    margin-right: 11%;
+    /* border: 2px solid cyan; */
+    position: relative;
+  }
+
+  input {
+    inset: 0px;
+    left: 40px;
+  }
+}
