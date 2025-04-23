@@ -44,6 +44,10 @@ header {
   padding: 32px;
 }
 
+.header-mobile {
+  display: none;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -120,11 +124,18 @@ button:hover {
 /********** Media Query 500px **********/
 
 @media (min-width: 830px) {
+  .root-container {
+    height: min(100vh, 1000px);
+  }
+
   header {
-    position: absolute;
-    left: 11vw;
-    top: 24px;
-    height: fit-content;
+    display: none;
+  }
+
+  .header-mobile {
+    display: inline;
+    position: relative;
+    top: -120px;
   }
 
   .flex-container {
@@ -138,7 +149,7 @@ button:hover {
     background-image: url(images/hero-desktop.jpg);
     background-size: cover;
     order: 2;
-    min-height: 800px;
+    height: min(100vh, 1000px);
     max-width: 610px;
 
     /* border: 2px solid red; */
